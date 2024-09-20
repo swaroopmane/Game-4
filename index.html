@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    .progress-bar {
+      width: 80%;
+      height: 30px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+    .progress {
+      height: 100%;
+      background-color: red;
+      border-radius: 5px;
+      width: 0;
+      transition: width 0.5s;
+    }
+    .score-text {
+      font-size: 18px;
+      color: #333;
+    }
+    ul {
+      text-align: left;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #008000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Password Strength Checker</h1>
+    <input type="password" id="passwordInput" placeholder="Enter your password" oninput="checkPasswordStrength()">
+    
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="score-text" id="scoreText">Strength: 0%</div>
+
+    <h3>Password Strength Criteria</h3>
+    <ul>
+      <li><span class="highlight">Length:</span> Minimum of 8 characters.</li>
+      <li><span class="highlight">Case Sensitivity:</span> Must contain both uppercase and lowercase letters.</li>
+      <li><span class="highlight">Numbers:</span> Must include at least one numeric character.</li>
+      <li><span class="highlight">Special Characters:</span> Must include special characters like !@#$%.</li>
+      <li><span class="highlight">Repetition:</span> Penalizes for repeated characters.</li>
+      <li><span class="highlight">Bonus:</span> Passwords longer than 12 characters with multiple special characters get a boost.</li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
